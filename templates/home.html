@@ -1,0 +1,112 @@
+{%extends 'base.html'%}
+{% load staticfiles%}
+{% block content%}
+<title>
+    {% block breadcrumb %}
+  <li class="breadcrumb-item active">Home Page </li>
+{% endblock %}
+</title>
+<p >
+    <div class="col-sm-20">
+    <p id="wrapper">
+        <div id="social-area">
+            <div class="inside">
+                <img src="\static\img\bank1.jpg" alt="bank1"  width="930"   height="300">
+            </div>
+<div>
+    Our bank details
+</div>
+   <table border="3"    width="30%"  align="left"   cellpadding="4" cellspacing="3">
+   <tr>
+      <th colspan="3"><br>
+        <h2> Currency Converter</h2>
+          <br method="post" id="centeforex-page-form">
+                  {% csrf_token%}
+                        <label for="edit-amount"> Amount:</label>
+                        <input maxlength="128" name="amount" id="edit-amount-1" value class="form-text" type="text">
+                         <label for="edit-period"> Currency:</label>
+                         <br/>
+                         <select name="currency" id="edit-currency" value class="form-select">
+                            <option value="1">Choose a Currency</option>
+                            <option value="3670.62">USD</option>
+                            <option value="36.51">KES</option>
+                            <option value="4009.25">EUR</option>
+                            </select><br/>
+                         <label for="edit-results-1"> Amount (UGX):</label>
+                         <input maxlength="128" name="results" id="edit-results-1" value class="form-text" type="text">
+                         <br/>
+                     <button type="submit" >Click here to Convert</button>
+            </form>
+
+            </th>
+            </tr>
+
+    </table>
+     <table border="3"   width="30%"  align="right"   cellpadding="4" cellspacing="3">
+   <TR>
+       <th COLSPAN="3"><br>  <h1> Loan Calculator</h1>
+           <form method="post" id="centeloan-page-form">
+                  {% csrf_token%}
+                       <label for="edit-amount"> Amount:</label>
+                        <input maxlength="128" name="amount" id="edit-amount" value class="form-text" type="text">
+                        <label for="edit-period"> Loan period:</label>
+                        <input maxlength="128" name="period" id="edit-period" value class="form-text" type="text">
+                         <label for="InterestRate"> Interest Rate:</label>
+                        <input maxlength="128" name="InterestRate" id="edit-InterestRate" value class="form-text" type="text">
+                        <label for="edit-results"> Results:</label>
+                        <input maxlength="128" name="results" id="edit-results" value class="form-text" type="text">
+
+                    <br/>
+                     <button type="submit"  >Get monthly payment</button>
+</form>
+
+      </th>
+   </tr>
+    </table>
+     <TABLE BORDER="3"    WIDTH="30%"  ALIGN="center"   CELLPADDING="2" CELLSPACING="2">
+   <TR>
+       <TH COLSPAN="3"><BR>  <h1> Forex </h1>
+
+
+      </TH>
+   </tr>
+          <TR>
+       <TH ALIGN="CENTER" > Buying</TH>
+       <TH ALIGN="CENTER"> Selling </TH>
+              <TH ALIGN="CENTER"> Currency </TH>
+   </TR>
+
+    <TR  ALIGN="CENTER" >
+
+        <TD>3670.42</TD>
+         <TD>3751.40</TD>
+          <TD>USD</TD>
+    </TR>
+         <TR  ALIGN="CENTER" >
+
+        <TD>4944.36</TD>
+         <TD>5141.42 </TD>
+          <TD>GBP</TD>
+    </TR>
+         <TR  ALIGN="CENTER" >
+
+        <TD>4320.38</TD>
+         <TD>4549.76</TD>
+          <TD>EUR </TD>
+    </TR>
+         <TR  ALIGN="CENTER" >
+
+        <TD>33.90</TD>
+         <TD>38.66 </TD>
+          <TD>KES </TD>
+    </TR>
+
+    </TABLE>
+
+
+</div>
+
+
+
+</body>
+    {% endblock%}

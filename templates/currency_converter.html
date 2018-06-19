@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{% load staticfiles%}
+{% block content%}
+<title>Currency Convertor </title>
+<body style="background-color:#A52A2A">
+<h1> Currency Convertor</h1>
+<div class="col-sm-30">
+ <p align="right">
+     {% for currency in currencies %}
+    <h1>{{currency.currency}}</h1>
+    <p> Amount: {{currency.amount}}</p>
+    <p> Currency:{{currency.currency}}</p>
+    <p> Amount(UGX):{{currency.amount}}</p>
+    {% endfor%}
+</div>
+</div>
+
+</body>
+
+{% endblock%}

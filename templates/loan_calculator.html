@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% load staticfiles%}
+{% block content%}
+
+<title> Loan Calculator </title>
+
+
+<body style="background-color:#A52A2A">
+<h1> Loan Calculator</h1>
+<div class="col-sm-30">
+ <p align="right">
+     {% for loan in loans %}
+    <h1>{{loan.loan}}</h1>
+    <p> Amount: {{loan.amount}}</p>
+    <p> Interest rate:{{loan.interest_rate}}</p>
+    <p> Loan period:{{loan.loan_period}}</p>
+    <p> Results:{{loan.results}}</p>
+
+    {% endfor%}
+
+
+
+
+</div>
+</div>
+
+</body>
+
+{% endblock%}
